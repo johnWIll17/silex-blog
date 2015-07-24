@@ -1,0 +1,70 @@
+body{
+    background-color: #ffffff;
+    /*color: #ffffff*/
+}
+header > nav{
+    background-color: #6f5499 !important;
+    color: #ffffff !important;
+}
+header .navbar-default .navbar-brand{
+    color : #ffffff;
+}
+header .navbar-default .navbar-brand:hover{
+    color : #ffffff;
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover{
+    color : #ffffff;
+}
+.navbar-default li.dropdown > ul.dropdown-menu{
+    width: 100%;
+}
+.page-header > p{
+    font-size: 35px;
+    display: inline;
+    margin-right: 50px;
+    color: #337ab7;
+}
+.page-header > a{
+    margin-bottom: 15px;
+}
+#register, #login{
+    background-color: #ffffff;
+    width: 600px;
+    margin: 0px auto;
+    border: 1px solid white;
+}
+#createarticle{
+    background-color: #ffffff;
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid white;
+}
+#createarticle .control-label{
+    text-align: left;
+}
+#createarticle textarea{
+    height: 300px;
+}
+#updatearticle_content{
+    height: 300px;
+}
+.article-title{
+    font-size: 20px;
+}
+.article-author{
+    font-style: italic;
+    margin-left: 20px;
+}
+.comment-list{
+    margin-top: 20px
+}
+.pagination{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.pagination ul li{
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid silver;
+}

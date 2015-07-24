@@ -1,0 +1,15 @@
+{% extends 'master.html.twig' %}
+{% block title %} Create a article {% endblock %}
+{% block bodyclass %}create-article-page{% endblock %}
+{% block body %}
+    {% include 'navbar.html.twig' %}
+    <div class="container">
+
+        <div class="page-header">
+            <p>Create An Article</p>
+        </div>
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        {{ form(form ,{'attr': {'novalidate': 'novalidate'}}) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'master.html.twig' %}
+{% block title %}Homepage{% endblock %}
+{% block bodyclass %}homepage{% endblock %}
+{% block body %}
+    {% include 'navbar.html.twig' %}
+    <div class="container">
+
+        <div class="row">
+            {% for flash in app.session.getFlashBag.get('message') %}
+                <div class="alert alert-{{ flash.type }} alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <p>{{ flash.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="page-header">
+            <p id="page-title">Articles</p>
+            <a class="btn btn-success create-article" href="{{ path('createarticle') }}">Create New Article</a>
+        </div>
+        <div class="list-articles">
+            {% for article in articlesCurrentPage %}
+                <article>
+                    <div class="article-title">
+                        <a href="{{ path('blogid', {id: article.id}) }}">{{ (article.name) }}</a>
+                    </div>
+                    <div class="article-author">
+                        <a><i>@By: {{ (article.username) }}</i></a>
+                    </div>
+                    <div class="article-content">
+                        <p>{{ article.content }}</p>
+                    </div>
+
+                </article>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <ul>
+                {% for page in pages %}
+                    <li><a href="{{ path('blog') }}?pageIndex={{ page }}">{{ page }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

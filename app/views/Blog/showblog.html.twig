@@ -1,0 +1,33 @@
+{% extends 'master.html.twig' %}
+{% block title %} {{ article.name }} {% endblock %}
+{% block bodyclass %}single-page{% endblock %}
+{% block body %}
+    {% include 'navbar.html.twig' %}
+    <div class="container">
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        <div class="page-header article-title">
+            <p>{{ (article.name) }}</p>
+            <a class="btn btn-success edit-article" href="{{ path('editid', {id: article.id}) }}">Edit</a>
+        </div>
+        <article>
+            <div class="article-author">
+                Created By :  <a>{{ (article.username) }}</a>
+            </div>
+            <div class="article-content">
+                {{ article.content }}
+            </div>
+        </article>
+        <div id="comment">
+                {{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="comment-list col-sm-offset-2 col-sm-10">
+                {% for comment in comments %}
+                    <blockquote class="comment-user well well-sm">
+                        <p>{{ comment.content }}</p>
+                        <footer>By: <cite title="Source Title">{{ comment.username }}</cite>  At {{ comment.date_created }}</footer>
+                    </blockquote>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
